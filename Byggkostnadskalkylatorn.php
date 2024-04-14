@@ -1,10 +1,20 @@
 <?php
 /*
-Plugin Name: Aldrin-Kalkylatorn
+Plugin Name: Byggkostnadskalkylatorn
 Description: En plugin för att beräkna kostnader baserat på olika parametrar inom byggbranschen.
 Version: 1.0
-Author: Sebastian Aldrin
+Author: John Sebastian Aldrin
 */
+
+/*
+ * Proprietär Licensversion 1.0
+ *
+ * Copyright [2024] [John Sebastian Aldrin]
+ *
+ * Alla rättigheter förbehållna.
+ *
+ * Tillåtelse att använda, kopiera, modifiera och distribuera denna kod eller delar av den är endast tillåtet med skriftligt tillstånd från upphovsrättsinnehavaren.
+ */
 
 // Register shortcode
 function calculation_shortcode() {
@@ -42,6 +52,10 @@ function calculation_shortcode() {
         ),
         "Standard" => array(
             "price" => 750, // Pris för 2.8 liter färg
+            "labor_factor" => 1.0 // Arbetstidsfaktor för standard färg
+        ),
+        "Akrylat" => array(
+            "price" => 780, // Pris för 2.8 liter färg
             "labor_factor" => 1.0 // Arbetstidsfaktor för standard färg
         ),
     );
@@ -83,6 +97,16 @@ add_shortcode('calculation_form', 'calculation_shortcode');
 
 // Enqueue JavaScript
 function add_plugin_scripts() {
-    wp_enqueue_script('plugin-script', plugin_dir_url( __FILE__ ) . 'plugin-script.js', array('jquery'), null, true);
+    wp_enqueue_script('plugin-script', plugin_dir_url( __FILE__ ) . 'js/plugin-script.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'add_plugin_scripts');
+// Funktion för att lägga till CSS
+function add_plugin_styles() {
+    // Ange sökvägen till din CSS-fil
+    $css_file = plugin_dir_url(__FILE__) . 'plugin-style.css';
+
+    // Registrera och anslut din CSS-fil
+    wp_enqueue_style('plugin-style', $css_file);
+}
+
+add_action('wp_enqueue_scripts', 'add_plugin_styles');

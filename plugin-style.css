@@ -1,0 +1,105 @@
+/*
+ * Proprietär Licensversion 1.0
+ *
+ * Copyright [2024] [John Sebastian Aldrin]
+ *
+ * Alla rättigheter förbehållna.
+ *
+ * Tillåtelse att använda, kopiera, modifiera och distribuera denna kod eller delar av den är endast tillåtet med skriftligt tillstånd från upphovsrättsinnehavaren.
+ */
+
+/* Styling för container */
+#calculation-form-container {
+    max-width: 500px; /* Maximal bredd för att hålla det responsivt */
+    margin: 0 auto; /* Centrerar innehållet */
+}
+
+/* Styling för formuläret */
+#calculation-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Styling för val av kategori */
+#job_category {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Styling för antal kvadratmeter */
+#square_meters {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Styling för val av materialtyp */
+#material_type {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Styling för knappen */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff701d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover-effekt för knappen */
+input[type="submit"]:hover {
+    background-color: #e65c00;
+}
+
+/* Styling för resultat */
+#calculation-result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Anpassa ikoner för kategorier */
+.category-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+
+
+
+
+/* Styling för beräkningsresultat */
+#calculation-result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling för rubriken för beräkningsresultat */
+#calculation-result h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Styling för priserna */
+#calculation-result p {
+    margin-bottom: 10px;
+}
+
+/* Styling för det totala priset */
+.calculation-total {
+    color: #ff701d; /* Färg för att markera det totala priset */
+    font-size: 20px;
+    margin-top: 15px;
+}
