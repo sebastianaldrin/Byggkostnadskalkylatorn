@@ -1,0 +1,15 @@
+Arbetskostnad:
+
+    Arbetskostnaden beräknas genom att multiplicera antalet kvadratmeter med det pris som är definierat för det valda arbetet (t.ex. golvläggning, målning).
+    För varje material finns det en faktor som multiplicerar arbetskostnaden. Denna faktor representerar den tid det tar att utföra arbetet för det specifika materialet jämfört med en standard. Det är därför olika material har olika arbetsfaktorer.
+    Du kan justera arbetsfaktorerna i koden om du anser att vissa material tar längre tid att arbeta med än andra.
+
+Materialkostnad:
+
+    Materialkostnaden beror på priset per kvadratmeter för det valda materialet och antalet kvadratmeter.
+    Priset per kvadratmeter för varje materialtyp är definierat i koden. Du kan ändra dessa priser om du vill justera kostnaderna baserat på dina specifika materialkostnader.
+
+Ändringar i beräkningar:
+
+    Om du vill göra ändringar i beräkningarna, som att lägga till nya materialalternativ eller ändra befintliga priser och faktorer, kan du göra det genom att ändra värdena direkt i koden.
+    Se till att du förstår hur ändringar påverkar de totala kostnaderna och att de är rimliga och representativa för din verksamhet och dina kostnader.
