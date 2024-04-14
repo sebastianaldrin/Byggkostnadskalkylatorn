@@ -1,0 +1,7 @@
+Proprietär Licensversion 1.0
+
+Copyright [2024] [John Sebastian Aldrin]
+
+Alla rättigheter förbehållna.
+
+Tillåtelse att använda, kopiera, modifiera och distribuera denna kod eller delar av den är endast tillåtet med skriftligt tillstånd från upphovsrättsinnehavaren.
