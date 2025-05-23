@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test - Byggkostnadskalkylator</title>
+    <link rel="stylesheet" href="plugin-style.css">
+</head>
+<body style="background: #f0f2f5; margin: 0; padding: 20px;">
+    <div id="calculation-form-container">
+        <h1 style="text-align: center; color: #2c3e50;">Byggkostnadskalkylator</h1>
+        
+        <div style="text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f8f9fa; border-radius: 6px; color: #666;">
+            <p style="margin: 0; font-size: 0.95rem; line-height: 1.5;">
+                Välkommen till vår byggkostnadskalkylator! Observera att alla beräkningar ger en uppskattad kostnad 
+                baserad på genomsnittliga marknadspriser. Den faktiska kostnaden kan variera beroende på 
+                materialtillgänglighet, arbetets komplexitet och lokala förutsättningar. Vi rekommenderar att 
+                alltid konsultera med entreprenören för en exakt prisuppgift.
+            </p>
+        </div>
+
+        <form id="calculation-form" method="post" onsubmit="return false;">
+            <!-- Kategori val -->
+            <div class="form-group">
+                <label for="job_category">Välj Kategori:</label>
+                <select name="job_category" id="job_category" onchange="updateFormFields()">
+                    <option value="" disabled selected>Välj en kategori</option>
+                    <option value="Altan">Altan</option>
+                    <option value="Inomhusmålning">Inomhusmålning</option>
+                    <option value="Fasadmålning">Fasadmålning</option>
+                </select>
+            </div>
+
+            <!-- Grundarbete val för inomhusmålning -->
+            <div id="grundarbete-container" class="form-group" style="display: none;">
+                <label for="grundarbete_type">Reparationer av väggar, spackling av hål eller borttagning av tapeter:</label>
+                <select name="grundarbete_type" id="grundarbete_type" onchange="showGrundarbeteDescription()">
+                    <option value="" disabled selected>-- Välj omfattning --</option>
+                    <option value="Nej">Nej</option>
+                    <option value="Små">Små (upp till 20% av ytan)</option>
+                    <option value="Medel">Medel (upp till 50% av ytan)</option>
+                    <option value="Stora">Stora (mer än 50% av ytan)</option>
+                </select>
+                <div id="grundarbete-info" class="info-text"></div>
+            </div>
+
+            <!-- Material val för andra kategorier -->
+            <div id="material-container" class="form-group">
+                <label for="material_type" id="material-type-label">Typ av material:</label>
+                <select name="material_type" id="material_type">
+                    <!-- Options will be dynamically populated -->
+                </select>
+                <div id="material-info" class="info-text"></div>
+            </div>
+
+            <!-- Kvadratmeter input -->
+            <div class="form-group">
+                <label for="square_meters">Ange kvadratmeter:</label>
+                <input type="number" name="square_meters" id="square_meters" min="0" step="0.1">
+            </div>
+            
+            <input type="submit" value="Beräkna kostnad" onclick="calculateCost()">
+        </form>
+        <div id="calculation-result"></div>
+    </div>
+
+    <style>
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .info-text {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #d35400;
+        }
+    </style>
+
+    <script src="js/plugin-script.js"></script>
+</body>
+</html> 
